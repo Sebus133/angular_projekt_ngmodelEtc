@@ -1,0 +1,36 @@
+<form #myForm="ngForm" (ngSubmit)="submit()">
+    <div class="formularz">
+        <h1>zamówienie: </h1>
+        <label>
+            <span>imie i nazwisko:</span>
+        <input #nameField="ngModel" name="imieinazwisko" [(ngModel)]="name" [required]="true"  type="text" class="wpis" id="imieinazwisko">
+        </label>
+        <p></p>
+        <label>
+            <span>e-mail:</span>
+        <input [(ngModel)]="email" [required]="true"   type="text" class="wpis" id="email" name="email">
+        </label>
+        <p></p>
+        <label>
+           <span>Produkt: </span> 
+        <select [(ngModel)]="produkt" [required]="true"   id="produkt" name="produkt" class="wpis">
+            <option value="lodowka">lodówka</option>
+            <option value="kuchenka">kuchenka</option>
+            <option value="telewizor">telewizor</option>
+        </select>
+        <p></p>
+        </label>
+        <label>
+            <span>ilość: </span>
+        <input name="ilosc" [(ngModel)]="ilosc" [required]="true" type="number" class="wpis" id="ilosc">
+        </label>
+        <p></p>
+        <label>
+            <span>wiadomość: </span>
+        <textarea [(ngModel)]="wiadomosc" [required]="true"   class="wiadomosc" id="wiadomosc" name="wiadomosc"></textarea>
+    </label>
+    <p></p>
+        <button [disabled]="myForm.invalid || ilosc<=0" type="submit" class="przycisk" name="przycisk">zatwierdź</button>
+    </div>
+    
+</form>
